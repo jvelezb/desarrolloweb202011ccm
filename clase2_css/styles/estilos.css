@@ -1,0 +1,61 @@
+/* comentar se comenta por
+ medio de estos elenments*/
+
+* { text-align: center;}
+hr { width: 50%;}
+p, h1{
+    font-size: 30 px;
+    font-style: normal;
+    color: #FF0000;
+    font-family : Courier, Prestige, monospace;
+
+}
+
+
+.fuente-grande {font-size: 50px; 
+    background-color:rgb(0,0,255)// blue;}
+
+.color-rojo , .tomatito, h2  { background-color: tomato;}
+
+p.azul {background-color: rgba(0,0,240, 0.3)//skyblue;}
+
+
+*.alerta {font-size: x-large;  color: red;}
+
+#entrada1 {
+    color: yellow;
+}
+
+.naranja{
+    background-color: orange;
+}
+
+.blanco{
+    color: white;
+}
+.verde{
+    color: green;
+
+}
+.naranja-obscuro{
+    background-color: darkorange;
+}
+
+blockquote{
+    font: italic large 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    line-height: 5em;
+    text-align: justify;
+   
+}
+h2{
+    text-align: left;
+    text-decoration: underline;
+    text-transform: lowercase;
+    border-style: solid;
+    border-color: darkred;
+    border-width: 20px 30px 40px 50px;
+    padding: 50px 60px;
+    margin: 10%;
+    border-radius:80%
+
+}
