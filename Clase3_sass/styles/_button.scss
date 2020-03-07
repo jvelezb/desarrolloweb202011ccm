@@ -1,0 +1,52 @@
+button{
+    color: black;
+    &:focus{
+        color:red;
+    }
+    &:hover{
+        color:rosybrown;
+    }
+}
+
+@mixin app-background($color){
+    #{if(&,'&.app-background','.app-background')}{
+        background-color: $color;
+        color: rgba(#FFF, 0.75);
+    }
+}
+
+@include app-background(#036);
+
+.sidebar{
+    @include app-background(#c6538c)
+}
+
+h1{
+    font: "Helvetica" +" sans-serif";
+    font-size: #{10px + 50px};
+}
+
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+@mixin tablet{
+    @media (min-width:#{$tablet-width}) and (max-width:#{$desktop-width - 1px}) {
+        @content;
+    }
+}
+@mixin desktop{
+    @media (min-width:#{$desktop-width}){
+        @content;
+    }
+}
+
+@include tablet{
+    #logo{
+        background-color: red;
+    }
+}
+@include desktop{
+    #logo{
+        background-color: yellow;
+    }
+}

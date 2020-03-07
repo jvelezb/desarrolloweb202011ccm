@@ -1,0 +1,78 @@
+@import 'variables';
+@import "button";
+
+
+
+
+body{
+    font: $fuente-primaria;
+}
+
+h1 {
+    font-size: $fuente-h1;
+    color: $color;
+
+}
+.clase_div_1{
+    .clase_1{
+        margin: 0px;
+        color: yellow;
+        p{
+            font-size: 55px;
+        }
+    }
+}
+
+@for $valor from 1 through 6{
+    .clase_parrafo_#{$valor}{
+        /*esto es un comentario*/
+        font-size: 40px-5*$valor;
+    }
+}
+
+@each $nombre in luis,pedro,salma,vicky{
+    .#{$nombre}-foto{
+        padding:3 em;
+    }
+}
+
+@mixin fotografia_mixin($size,$circle:false){
+    width: $size;
+    height: $size;
+    @if $circle{
+        border-radius: $size/2;
+    }
+
+}
+.fotografia_cuadrada{
+    @include fotografia_mixin(100px, $circle:false )
+}
+.fotografia_circular{
+    @include fotografia_mixin(100,$circle:true )
+}
+
+@function escala($valor,$base,$ratio:1.6){
+    @while $valor>$base{
+        $valor: $valor/$ratio;
+    }
+    @return $valor;
+}
+
+.clase_5{
+    font-size: escala(20px,16px);
+}
+
+$selector: 'alumnos';
+.#{$selector}_md{
+    color: #FFFFFF;
+}
+.#{$selector}_lg{
+    color: cyan;
+}
+
+.circulo{
+    $radio: 100px;
+    width: $radio;
+    height: $radio;
+    border-radius: $radio/2;
+}
