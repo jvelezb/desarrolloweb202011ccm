@@ -1,0 +1,8 @@
+{
+    "compilerOptions": {
+        "lib": ["es6","ES2017","DOM","ScriptHost"],
+        "outDir": "lib",
+        "target": "es2017"
+    },
+    "include": ["src/**/*"]
+}

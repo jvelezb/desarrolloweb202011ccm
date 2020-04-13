@@ -1,0 +1,37 @@
+@import 'variables';
+@import 'bootstrap/bootstrap-grid';
+@import 'bootstrap/bootstrap-reboot';
+@import 'bootstrap/jumbotron';
+
+
+
+.texto-centrado {
+    text-align: center !important;
+  }
+
+
+titulo {
+    @extend .jumbotron;
+    @extend .texto-centrado;
+   
+}
+
+author-bio,
+author-name {
+    @include make-row();
+    
+
+}
+
+.author-nameLabel,
+.author-nameFirst,
+.author-nameLast {
+   @extend .col-md-4;
+   @extend .col-sm-6;
+   @extend .col-lg-12;
+}
+
+.author-bio p {
+    @extend .col-md-12;
+    @extend .col-sm-3;
+}
