@@ -5,6 +5,8 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './encabezado.component.html'
 })
 export class EncabezadoComponent implements OnInit {
+
+  
   bienvenida = "Saludos a todos los que se quedaron despues de las 11";
   constructor() { }
 
