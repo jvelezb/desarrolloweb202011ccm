@@ -1,1 +1,28 @@
-<p>informacion-display works!</p>
+<h1>Desplegando información {{nombreAlumno}}</h1>
+<button (click)="cambio()">Cambio de alumno</button>
+
+
+<table>
+<thead>
+    <th>matricula</th>
+    <th>Nombre</th>
+    <th>carrera</th>
+</thead>
+<tbody>
+    <tr *ngFor="let alumno of alumnos">
+        <td><a (click)="onSelect(alumno)">{{alumno.matricula}}</a></td>
+        <td>{{alumno.nombre}}</td>
+        <td>{{alumno.carrera}}</td>
+    </tr>
+</tbody>
+</table>
+
+<div *ngIf="alumnoSeleccion">
+    <h2>Nombre: {{alumnoSeleccion.nombre}}</h2>
+    <p>matricula: {{alumnoSeleccion.matricula}}</p>
+        <input   type= "text" [(ngModel)]="alumnoSeleccion.nombre" placeholder="nombre"/>
+
+        <input   type= "text" [ngModel]="alumnoSeleccion.matricula" placeholder="matricula"/>
+   
+    
+</div>
