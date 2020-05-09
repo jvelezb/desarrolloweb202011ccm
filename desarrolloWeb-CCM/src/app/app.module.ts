@@ -12,6 +12,17 @@ import { AlumnoModule } from './modules/alumno/alumno.module';
 import { ProfesoresModule } from './modules/profesores/profesores.module';
 import { PageNotFoundComponent } from './main-components/page-not-found/page-not-found.component';
 import { PaginaPrincipalComponent } from './main-components/pagina-principal/pagina-principal.component';
+import { StorageServiceModule} from 'ngx-webstorage-service';
+
+import {registerLocaleData} from '@angular/common';
+import localeMX from '@angular/common/locales/es-MX';
+import localeUS from '@angular/common/locales/en';
+
+
+
+registerLocaleData(localeMX,'es-MX');
+registerLocaleData(localeUS,'en');
+
 
 @NgModule({
   declarations: [
@@ -28,7 +39,8 @@ import { PaginaPrincipalComponent } from './main-components/pagina-principal/pag
     BrowserModule,
     AlumnoModule,
     ProfesoresModule,
-    AppRoutingModule
+    AppRoutingModule,
+    StorageServiceModule
   ],
   providers: [],
   bootstrap: [AppComponent]

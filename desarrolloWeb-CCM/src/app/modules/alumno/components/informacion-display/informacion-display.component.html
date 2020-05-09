@@ -1,6 +1,10 @@
 <h1>Desplegando información {{nombreAlumno}}</h1>
 <button (click)="cambio()">Cambio de alumno</button>
+<button (click)="load()">Cargar info local storage</button>
+<div *ngFor="let usuario of usuarios" >
+  <h1>{{usuario.username}} -- {{usuario.fecha}}</h1>
 
+</div>
 
 <table>
 <thead>
@@ -23,6 +27,6 @@
         <input   type= "text" [(ngModel)]="alumnoSeleccion.nombre" placeholder="nombre"/>
 
         <input   type= "text" [ngModel]="alumnoSeleccion.matricula" placeholder="matricula"/>
-   
-    
+
+
 </div>
