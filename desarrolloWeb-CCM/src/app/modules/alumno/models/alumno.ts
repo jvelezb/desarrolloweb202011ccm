@@ -1,7 +1,7 @@
 export class Alumno {
-  constructor(public matricula?: number,
-              public nombre?: string,
-              public carrera?: string){
-
-  }
+  constructor(
+    public matricula?: number,
+    public name?: string,
+    public carrera?: string
+  ) {}
 }

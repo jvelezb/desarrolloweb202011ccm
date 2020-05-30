@@ -1,9 +1,11 @@
 <p i18n>Add Alumno</p>
 <table class="table">
-  <tr *ngFor="let variableAlumno of alumnos" >
-    <td>{{variableAlumno.matricula}}</td>
-    <td>{{variableAlumno.nombre}}</td>
-    <td>{{variableAlumno.carrera}}</td>
+  <tr *ngFor="let variableAlumno of alumnos">
+    <td>{{ variableAlumno.matricula }}</td>
+    <td>{{ variableAlumno.name }}</td>
+    <td>{{ variableAlumno.carrera }}</td>
   </tr>
 </table>
-<button class="btn btn-warning" title="editar" (click)="agregarAlumno()">Agregar</button>
+<button class="btn btn-warning" title="editar" (click)="agregarAlumno()">
+  Agregar
+</button>
