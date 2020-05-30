@@ -2,6 +2,10 @@
 //importamos todos paquetes que necesitamos
 var express = require("express");
 var app = express();
+
+var jwt = require("express-jwt"); //Soporte para JWT
+var jwksRsa = require("jwks-rsa"); //metodo de authentication
+
 const cors = require("cors"); //importar cors para su uso
 
 var bodyParser = require("body-parser");
@@ -9,6 +13,22 @@ var morgan = require("morgan");
 var mongoose = require("mongoose"); //mongoose
 var Alumno = require("./models/alumnos");
 var Clase = require("./models/clase");
+
+const authConfig = {
+  domain: "dev-qz51ohsc.auth0.com",
+  audience: "S7G4Uz1fN3hi8Csr3HrQzpM0nOdFpvZW",
+};
+
+const checkJwt = jwt({
+  secret: jwksRsa.expressJwtSecret({
+    cache: true,
+    rateLimit: true,
+    jwksRequestsPerMinute: 5,
+    jwksUri: `https://${authConfig.domain}/.well-known/jwks.json`,
+  }),
+  audience: authConfig.audience,
+  algorithm: ["RSA256"],
+});
 
 //// configurar la conexion a mi base de datos
 const uri =
@@ -49,7 +69,7 @@ router.use(function (req, res, next) {
   next();
 });
 
-router.get("/", function (req, res) {
+router.get("/", checkJwt, function (req, res) {
   res.json({ mensaje: "Saludos desde zoom y nuestro primer API" });
 });
 //declaracion de API para alumnos
@@ -87,7 +107,7 @@ router
       return;
     }
   })
-  .get(function (req, resp) {
+  .get(checkJwt, function (req, resp) {
     Alumno.find(function (err, alumnos) {
       if (err) {
         resp.status(500).send(err);

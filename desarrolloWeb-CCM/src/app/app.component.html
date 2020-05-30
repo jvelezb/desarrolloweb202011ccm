@@ -1,10 +1,28 @@
 <h1 i18n>Cheers</h1>
+
 <nav>
-    <ul>
-        <li><a routerLink="/alumnos/viewAlumno" routerLinkActive="class1">VistaAlumno</a></li>
-        <li><a routerLink="/alumnos/listaAlumnos" routerLinkActive="class1">ListaAlumno</a></li>
-        <li><a routerLink="/alumnos/detailAlumno" routerLinkActive="class1"> Detalle alumno</a></li>i
-    </ul>
+  <button (click)="auth.login()" *ngIf="!auth.loggedIn">Login In</button>
+  <button (click)="auth.logout()" *ngIf="auth.loggedIn">Log out</button>
+  <ul>
+    <li>
+      <a routerLink="/alumnos/viewAlumno" routerLinkActive="class1"
+        >VistaAlumno</a
+      >
+    </li>
+    <li>
+      <a routerLink="/alumnos/listaAlumnos" routerLinkActive="class1"
+        >ListaAlumno</a
+      >
+    </li>
+    <li>
+      <a routerLink="/alumnos/detailAlumno" routerLinkActive="class1">
+        Detalle alumno</a
+      >
+    </li>
+    <li>
+      <a routerLink="perfil" *ngIf="auth.loggedIn">Perfil</a>
+    </li>
+  </ul>
 </nav>
 <router-outlet></router-outlet>
 <app-informacion-usuario></app-informacion-usuario>

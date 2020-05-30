@@ -18,6 +18,7 @@ import { StorageServiceModule } from 'ngx-webstorage-service';
 import { registerLocaleData } from '@angular/common';
 import localeMX from '@angular/common/locales/es-MX';
 import localeUS from '@angular/common/locales/en';
+import { PerfilComponent } from './main-components/perfil/perfil.component';
 
 registerLocaleData(localeMX, 'es-MX');
 registerLocaleData(localeUS, 'en');
@@ -32,6 +33,7 @@ registerLocaleData(localeUS, 'en');
     Componente3Component,
     PageNotFoundComponent,
     PaginaPrincipalComponent,
+    PerfilComponent,
   ],
   imports: [
     BrowserModule,
